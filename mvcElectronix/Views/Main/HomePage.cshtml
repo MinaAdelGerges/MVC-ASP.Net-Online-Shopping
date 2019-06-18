@@ -1,0 +1,30 @@
+﻿@model List<mvcElectronix.Models.Products>
+@{
+    ViewBag.Title = "HomePage";
+    
+}
+
+@foreach (var product in Model)
+{
+    <div class="productContainer">
+        <form>
+
+            <img class="product_img" src="/images/@product.image" /><br />
+            <label class="product_title">@product.name</label><br />
+            <label class="productPrice">@product.price</label><br />
+            <label>@product.dsecription</label><br />
+            
+
+            @Html.ActionLink("Add To Cart", "AddCart", "Main", new {productId=@product.productId },new { @class="btn btn-success" })
+
+        </form>
+    </div>
+
+} 
+
+
+
+
+
+
+

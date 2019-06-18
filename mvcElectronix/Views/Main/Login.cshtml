@@ -1,0 +1,17 @@
+﻿@model mvcElectronix.Models.Users
+@{
+    ViewBag.Title = "Login";
+}
+
+<form method="post">
+    @Html.LabelFor(n => n.name)
+    @Html.EditorFor(n=>n.name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(n => n.name)
+    @Html.LabelFor(n => n.password)
+    @Html.EditorFor(n => n.password, new {@class = "form-control" })
+    @Html.ValidationMessageFor(n => n.password)
+    
+    <input type="submit" value="Login" class="btn btn-primary"/><br />
+    <label style="color:red;font-weight:bold">@ViewBag.error</label>
+</form>
+

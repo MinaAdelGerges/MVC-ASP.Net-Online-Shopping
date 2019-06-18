@@ -1,0 +1,30 @@
+﻿@model mvcElectronix.Models.Products
+
+@{
+    ViewBag.Title = "AddProduct";
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group mx-sm-3 mb-2">
+        <label>Product Name:</label>
+        @Html.TextBoxFor(n => n.name,new { @class="form-control"})
+        @Html.ValidationMessageFor(n => n.name)
+        <label>Product Price:</label>
+        @Html.TextBoxFor(n => n.price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.price)
+        <label>Product Description:</label>
+        @Html.TextBoxFor(n => n.dsecription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.dsecription)
+        <input type="file" name="file" />
+
+
+
+        @Html.DropDownListFor(n => n.categoryId, ViewBag.li as SelectList)
+    </div>
+
+    
+    <input type="submit" class="btn btn-success" value="Add Prodcut"/>
+</form>
+
+
+
+

@@ -1,0 +1,19 @@
+﻿@model List<mvcElectronix.Models.Cart>
+
+
+
+    @foreach (var item in Model)
+    {
+        <div class="productContainer container">
+            <label class="product_title">@item.products.name</label><br />
+            <label class="productName"> @item.products.dsecription</label><br />
+            <img class="product_img" src="/images/@item.products.image" /><br />
+            <label class="productName"> @item.dataPurchased</label><br />
+            <label>Amount :@item.amount</label><br />
+            <label class="productPrice">@item.products.price $</label><br />
+            @*<label>Name :@item.users.name</label>*@
+            @Html.ActionLink("Delete", "DeleteProduct", "Main",new {cartId=@item.cartId }, new { @class="cartButton btn btn-danger"})
+
+        </div>
+    }
+

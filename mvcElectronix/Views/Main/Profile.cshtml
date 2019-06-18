@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="@ViewBag.image">
+                </div>
+                <div class="info">
+                    <div class="desc">@ViewBag.name</div>
+                    <div class="desc">@ViewBag.email</div>
+                    <div class="desc">@ViewBag.age</div>
+                    <div class="desc">@ViewBag.gender</div>
+                    <label hidden>@ViewBag.id</label>
+                    @Html.ActionLink("Logout", "Logout", "Main", new { @class = "desc" })
+                    @Html.ActionLink("Edit Profile", "EditProfile", "Main", new { userId = ViewBag.id }, new { @class = "desc" })
+                    @Html.ActionLink("Change Password", "ChangePassword", "Main", new { userId = ViewBag.id }, new { @class = "desc" })
+                </div>
+               
+                <div class="bottom">
+                    <a class="btn btn-primary btn-twitter btn-sm btnn" href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm btnn" rel="publisher"
+                       href="#">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                    <a class="btn btn-primary btn-sm btnn" rel="publisher"
+                       href="#">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="btn btn-warning btn-sm btnn" rel="publisher" href="#">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

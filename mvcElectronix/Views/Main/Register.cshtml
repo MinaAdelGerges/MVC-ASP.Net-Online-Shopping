@@ -1,0 +1,48 @@
+﻿@model mvcElectronix.Models.Users
+@{
+    ViewBag.Title = "Register";
+} 
+    <form method="post" enctype="multipart/form-data">
+
+        @Html.LabelFor(n => n.name)
+        <div class="col-md-8">
+            @Html.TextBoxFor(n => n.name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(n => n.name)
+        </div>
+        @Html.LabelFor(n => n.age)
+        <div class="col-md-8">
+            @Html.TextBoxFor(n => n.age, new { @class = "form-control" })
+            @Html.ValidationMessageFor(n => n.age)
+        </div>
+        @Html.LabelFor(n => n.password)
+        <div class="col-md-8">
+            @Html.PasswordFor(n => n.password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(n => n.password)
+        </div>
+        @Html.LabelFor(n => n.cPassword)
+        <div class="col-md-8">
+            @Html.PasswordFor(n => n.cPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(n => n.cPassword)
+        </div>
+        @Html.LabelFor(n => n.email)
+        <div class="col-md-8">
+            @Html.TextBoxFor(n => n.email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(n => n.email)
+        </div>
+        @Html.LabelFor(n => n.gender)
+        <div class="col-md-8">
+            @Html.EditorFor(n => n.gender, new { @class = "form-control" })
+            @Html.ValidationMessageFor(n => n.gender)
+        </div>
+
+        @Html.LabelFor(n => n.image)
+        <div class="col-md-8">
+        <input type="file" name="file"/>
+            @Html.ValidationMessageFor(n => n.image)
+        </div>
+
+        <input type="submit" class="btn btn-info" value="Register"/>
+    </form>
+
+
+

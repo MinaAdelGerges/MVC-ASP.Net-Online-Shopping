@@ -1,0 +1,129 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Electronix Store</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+  
+    <script src="~/scripts/jquery-3.0.0.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/scripts/jquery.validate.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+</head>
+<body>
+    <div class="container">
+        <div id="main_container">
+            <div class="top_bar">
+                <div class="top_search">
+                    <div class="search_text"><a href="#">Advanced Search</a></div>
+                    <input type="text" class="search_input" name="search" />
+                    <input type="image" src="/images/search.gif" class="search_bt" />
+                </div>
+            </div>
+            <div id="header">
+                <div id="logo"> <a href="#"><img src="/images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
+                <div class="oferte_content">
+                    <div class="top_divider"><img src="/images/header_divider.png" alt="" width="1" height="164" /></div>
+                    <div class="oferta">
+                        <div class="oferta_content">
+                            <img src="/images/laptop.png" width="94" height="92" alt="" border="0" class="oferta_img" />
+                            <div class="oferta_details">
+                                <div class="oferta_title">Samsung GX 2004 LM</div>
+
+
+                            </div>
+                        </div>
+                        <div class="oferta_pagination"> <span class="current">1</span> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> </div>
+                    </div>
+                    <div class="top_divider"><img src="/images/header_divider.png" alt="" width="1" height="164" /></div>
+                </div>
+                <!-- end of oferte_content-->
+            </div>
+            <div id="main_content">
+                <div id="menu_tab">
+                    <div class="left_menu_corner"></div>
+                    @if (Session["userid"] != null)
+                    {
+                        <ul class="menu">
+
+
+                            <li>@Html.ActionLink("HomePage", "HomePage", "Main", new { @class = "nav1" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Profile", "Profile", "Main", new { @class = "nav4" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Add Products", "AddProduct", "Main", new { @class = "nav3" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Main", new { @class = "text-danger" })</li>
+                            <li class="divider"></li>
+                          @*  <li>@Html.ActionLink("Login", "Login", "Main", new { @class = "nav4", @id = "login" })</li>*@
+                        
+                            <li>@Html.ActionLink("History", "History", "Main", new { @class = "nav6" })</li>
+                            <li class="divider"></li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="menu">
+
+                            <li>@Html.ActionLink("HomePage", "HomePage", "Main", new { @class = "nav1" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Profile", "Profile", "Main", new { @class = "nav4" })</li>
+                            <li class="divider"></li>
+                            @*<li>@Html.ActionLink("Management", "Management", "Main", new { @class = "nav2" })</li>*@
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Add Products", "AddProduct", "Main", new { @class = "nav3" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Register", "Register", "Main", new { @class = "nav4", @id = "login" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Login", "Login", "Main", new { @class = "nav4", @id = "login" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("History", "History", "Main", new { @class = "nav6" })</li>
+                            <li class="divider"></li>
+                        </ul>
+                    }
+
+
+                    <div class="center_content">
+                        @RenderBody()
+                    </div>
+                </div>
+
+                <!-- end of menu tab -->
+
+                <div class="left_content">
+                    <div class="title_box">Categories</div>
+                    <ul class="left_menu">
+                        <li class="odd"><a href="#">Mobiles</a></li>
+                        <li class="even"><a href="#">Laptops</a></li>
+                    </ul>
+                    <div class="title_box">Special Products</div>
+                    <div class="border_box">
+                        <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
+                        <div class="product_img"><a href="details.html"><img src="/images/laptop.png" alt="" border="0" /></a></div>
+                        <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+                    </div>
+
+                    <div class="banner_adds"> <a href="#"><img src="/images/bann2.jpg" alt="" border="0" /></a> </div>
+                </div>
+                <!-- end of left content -->
+
+                <div class="footer">
+                    <div class="left_footer"> <img src="/images/footer_logo.png" alt="" width="170" height="49" /> </div>
+                    <div class="center_footer">
+                        All Rights Reserved By Mina Adel<br />
+                    </div>
+                    <div class="right_footer"> <a href="#">home</a> <a href="#">about</a> <a href="#">sitemap</a> <a href="#">rss</a> <a href="contact.html">contact us</a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@model mvcElectronix.Models.Products
+@*@model mvcElectronix.Models.Cart*@
+
+@{
+    ViewBag.Title = "AddCart";
+
+    //int[] amount = Enumerable.Range(1, 20).ToArray();
+    //ViewBag.amount = amount;
+    int userId = int.Parse(Session["userid"].ToString());
+}
+
+<div class="productContainer">
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" hidden name="productId" value=@Model.productId>
+        <input type="text" hidden name="userId" value=@userId>
+
+        <img class="product_img" src="/images/@Model.image" /><br />
+        <label class="product_title">@Model.name</label><br />
+        <label class="productPrice">@Model.price$</label><br />
+        <label>@Model.dsecription</label><br />
+        <input type="number" name="amount" placeholder="Amount:"/><br />
+
+
+        @*@Html.ActionLink("Add Cart", "AddCartToDb","Main",new { productId=@Model.productId,userId=int.Parse(Session["userid"].ToString())},new {@class="btn btn-success" })*@
+        <input type="submit" value="Add To Cart" class="btn btn-success" />
+    </form>
+</div>
+

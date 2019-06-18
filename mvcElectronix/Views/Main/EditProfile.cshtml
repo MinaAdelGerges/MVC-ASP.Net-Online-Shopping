@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "EditProfile";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <label>Name:</label>
+    <input type="text" class="form-control" value="@ViewBag.name" name="name"/>
+    <label>Age:</label>
+    <input type="text" class="form-control" value="@ViewBag.age" name="age"/>
+    <label>Email:</label>
+    <input type="text" class="form-control" value="@ViewBag.email" name="email"/>
+    <label>Gender:</label>
+    <input type="text" class="form-control" value="@ViewBag.gender" name="gender"/>
+    <label>Photo:</label>
+    <label hidden>@ViewBag.userId</label>
+    <input type="file" class="form-control" name="file"/>
+    <input type="submit" class="btn btn-primary" value="Edit"/>
+</form>
+
