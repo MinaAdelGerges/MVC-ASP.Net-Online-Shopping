@@ -1,2 +1,6 @@
+![alt text](https://github.com/MinaAdelGerges/MVC_Project/blob/master/mvcElectronix/images/MVC_Proejct.png)
+
 # MVC_Project
-All Files on MvCElectronix Folder with Database Sql Server Enjoy <3
+Online Shopping Project Using :-
+.Net Framework 4.5.2
+All Files on mvcElectronix Folder with Database Sql Server Enjoy :)
