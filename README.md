@@ -1,6 +1,6 @@
 ![alt text](https://github.com/MinaAdelGerges/MVC_Project/blob/master/mvcElectronix/images/MVC_Proejct.png)
 
-# MVC_Project
+# Online Shopping (ITI Proejct)
 Online Shopping Project Using :- <br>
 Entity Framewrok <br>
 SQl Server <br>
