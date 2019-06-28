@@ -1,2 +1,2 @@
-$ cat .gitattributes
-*.rb linguist-language=Java
+* linguist-vendored
+*.objective-c linguist-vendored=false
